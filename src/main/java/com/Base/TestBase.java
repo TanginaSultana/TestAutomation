@@ -4,6 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.Random;
+
 public class TestBase {
     public static WebDriver driver;
 
@@ -29,5 +35,13 @@ public class TestBase {
 
     public static void openUrl(String URL){
         driver.get(URL);
+    }
+
+    public static String RandomName() throws IOException {
+        return getString();
+    }
+
+    public static String getString() throws IOException {
+        return getString();
     }
 }

@@ -25,6 +25,10 @@ public class Registration extends TestBase {
         Login.click();
     }
     public static String RandomName() throws IOException {
+        return getString();
+    }
+
+    public static String getString() throws IOException {
         FileOutputStream fis=new FileOutputStream("./src/main/resources/Data.properties");
         Properties prop=new Properties();
 
