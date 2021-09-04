@@ -10,7 +10,7 @@ public class Login extends TestBase {
         openUrl("https://demo.opencart.com/");
         OpenLoginPage();
         TC_Valid_loginTest();
-        chrome_close();
+      //  chrome_close();
     }
     public static void OpenLoginPage(){
         WebElement MyAccount=driver.findElement(By.linkText("My Account"));
