@@ -1,5 +1,10 @@
 package com.Base;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -64,5 +69,28 @@ public class TestBase {
         //save
         FileUtils.copyFile(srcFile,new File("./src/main/Screenshots/"+name+".png"),true);
         System.out.println("Image captured and saved.");
+    }
+
+    public static void createPDF(String Name) throws IOException, DocumentException {
+        //take a screenshot as byte
+        byte[] input = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+        Document doc = new Document();
+        String output = "./src/main/PDF/"+Name+".pdf";
+
+        FileOutputStream fs =new FileOutputStream(output);
+        PdfWriter writer = PdfWriter.getInstance(doc,fs);
+        writer.open();
+
+        doc.open();
+        Image img = Image.getInstance(input);
+        img.scaleToFit(PageSize.A4.getWidth()/2,PageSize.A4.getHeight()/2);
+        doc.add(img);
+
+        //  doc.add(new Paragraph(""));
+        doc.close();
+
+        writer.close();
+        System.out.println("PDF generated successfully.");
+
     }
 }
