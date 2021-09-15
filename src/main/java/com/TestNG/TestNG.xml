@@ -13,4 +13,10 @@
             <class name="com.TestNG.DP_LoginTest"></class>
         </classes>
     </test>
+
+    <test name="Login Functional Test 3">
+        <classes>
+            <class name="com.TestNG.DP_Registration"></class>
+        </classes>
+    </test>
 </suite>
