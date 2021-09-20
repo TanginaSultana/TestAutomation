@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Login Test Suite">
+    <test name="Login Functional Test in Firefox">
+        <parameter name="Browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.Extentreports.DD_LoginTestExtent"></class>
+        </classes>
+    </test>
+
+</suite>
